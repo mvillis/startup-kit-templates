@@ -79,8 +79,6 @@ Parameters:
       - cache.r6g.12xlarge 
       - cache.r6g.24xlarge
 
-
-
   CacheEngine:
     Description: The underlying cache engine, either Redis or Memcached
     Type: String
@@ -105,6 +103,14 @@ Parameters:
     AllowedValues:
       - true
       - false
+
+  VPC:
+    Description: Select the VPC that you want to deploy the Elasticache cluster into
+    Type: AWS::EC2::VPC::Id
+
+   Subnets:
+    Description: Select the subnets for the cluster
+    Type: List<AWS::EC2::Subnet::Id> 
 
 Conditions:
 
